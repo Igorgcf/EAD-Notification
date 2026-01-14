@@ -162,3 +162,4 @@ Este microsserviço é **cliente de um Service Registry**, permitindo:
 Este microsserviço faz parte de um ecossistema maior e foi projetado para funcionar de forma independente, porém integrada aos demais serviços da plataforma EAD.
 
 ---
+![image](https://qnax.sh/blog/wp-content/uploads/2024/04/spring-framework-1024x576.png)
