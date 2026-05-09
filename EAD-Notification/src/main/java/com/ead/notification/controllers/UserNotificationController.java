@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -18,12 +20,14 @@ public class UserNotificationController {
     @Autowired
     private NotificationService service;
 
+    @PreAuthorize("hasAnyRole('STUDENT')")
     @GetMapping(value = "/users/{userId}/notifications")
-    public ResponseEntity<Page<NotificationDTO>> findAllUsersNotification(@PathVariable UUID userId, Pageable pageable) {
+    public ResponseEntity<Page<NotificationDTO>> findAllUsersNotification(@PathVariable UUID userId, Pageable pageable, Authentication authentication) {
         Page<NotificationDTO> page = service.findAllUsersNotification(userId, pageable);
         return ResponseEntity.ok(page);
     }
 
+    @PreAuthorize("hasAnyRole('STUDENT')")
     @PutMapping(value = "/users/{userId}/notifications/{id}")
     public ResponseEntity<NotificationDTO> updateNotificationStatus(@PathVariable UUID userId,
                                                                     @PathVariable UUID id,
