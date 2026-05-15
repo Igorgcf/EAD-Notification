@@ -157,9 +157,29 @@ Este microsserviço é **cliente de um Service Registry**, permitindo:
 
 ---
 
+## Microservices da Arquitetura
+
+Para o funcionamento completo da arquitetura em ambiente local, todos os microservices do ecossistema devem estar em execução utilizando o profile ativo `dev`.
+
+Os microservices que compõem a arquitetura são:
+
+- [Authuser Microservice](https://github.com/Igorgcf/EAD-Authuser)
+- [Course Microservice](https://github.com/Igorgcf/EAD-Course)
+- [API Gateway](https://github.com/Igorgcf/EAD-API-Gateway)
+- [Service Discovery (Eureka Server)](https://github.com/Igorgcf/EAD-Service-Registry)
+- [Config Server](https://github.com/Igorgcf/EAD-Config-Server)
+- Execute [Notification Microservice](https://github.com/Igorgcf/EAD-Notification)
+  ou
+  [Notification-Hex Microservice](https://github.com/Igorgcf/EAD-Notification-Hexagonal)
+
+> ℹ️ Certifique-se de executar todos os serviços com o profile `dev` ativo para garantir a comunicação correta entre os microservices durante o desenvolvimento local.
+
+---
+
 ## 📌 Observações
 
 Este microsserviço faz parte de um ecossistema maior e foi projetado para funcionar de forma independente, porém integrada aos demais serviços da plataforma EAD.
 
 ---
+
 ![image](https://qnax.sh/blog/wp-content/uploads/2024/04/spring-framework-1024x576.png)
